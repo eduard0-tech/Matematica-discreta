@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Interativa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Matemática</a>
+            <div class="ms-auto">
+                <button class="btn btn-sm btn-outline-secondary" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Matemática Interativa</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#conjuntos">Conjuntos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#relacoes">Relações</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#funcoes">Funções</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sequencias">Sequências</a>
+                        </li>
+                    </ul>
+                    <button class="btn btn-sm btn-outline-secondary ms-3" id="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
+    <section id="introducao-geral" class="introducao-hero">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h1 class="display-4 mb-4">
+                        <i class="fas fa-brain"></i> Matemática Discreta Essencial
+                    </h1>
+                    <p class="lead mb-5">
+                        Domine os fundamentos da matemática moderna através de recursos interativos e exemplos práticos
+                    </p>
+
+                    <!-- Cards dos Tópicos - Linha Única -->
+                    <div class="row g-4 mb-5 justify-content-center">
+                        <!-- Conjuntos -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="card card-animada h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-shapes fa-2x mb-3 text-primary"></i>
+                                    <h5>Conjuntos</h5>
+                                    <small class="text-muted">Operações e diagramas de Venn</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Relações -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="card card-animada h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-project-diagram fa-2x mb-3 text-success"></i>
+                                    <h5>Relações</h5>
+                                    <small class="text-muted">Propriedades e equivalência</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Funções -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="card card-animada h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-chart-line fa-2x mb-3 text-danger"></i>
+                                    <h5>Funções</h5>
+                                    <small class="text-muted">Tipos e composição</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sequências -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="card card-animada h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-sort-numeric-up-alt fa-2x mb-3 text-warning"></i>
+                                    <h5>Sequências</h5>
+                                    <small class="text-muted">PA, PG e progressões</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conteúdo Hero -->
+                    <div class="hero-content">
+                        <div class="card card-animada bg-light">
+                            <div class="card-body">
+                                <p class="mb-3">
+                                    Neste guia interativo você aprenderá:
+                                </p>
+                                <div class="row text-start">
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <i class="fas fa-check-circle text-success"></i>
+                                                Operações com conjuntos
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fas fa-check-circle text-success"></i>
+                                                Propriedades de relações
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <i class="fas fa-check-circle text-success"></i>
+                                                Classificação de funções
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fas fa-check-circle text-success"></i>
+                                                Sequências numéricas
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary mt-4" onclick="scrollToSection('conjuntos')">
+                                    Comece a Explorar <i class="fas fa-arrow-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Conjuntos -->
+    <section id="conjuntos" class="container">
+        <h2 class="mb-4"><i class="fas fa-diagram-project me-2"></i>Conjuntos</h2>
+
+        <div class="introducao mb-5">
+            <h3>O que são Conjuntos?</h3>
+            <div class="card card-animada">
+                <div class="card-body">
+                    <p>Um <strong>conjunto</strong> é uma coleção de objetos distintos chamados elementos. Exemplos:</p>
+                    <ul>
+                        <li>Vogais: A = {a, e, i, o, u}</li>
+                        <li>Números pares: B = {2, 4, 6, 8, ...}</li>
+                    </ul>
+
+                    <h5 class="mt-4">Operações Fundamentais:</h5>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="alert alert-primary">
+                                <strong>União (∪):</strong> Elementos de A ou B
+                                <div class="mt-2">A ∪ B = {x | x ∈ A ∨ x ∈ B}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="alert alert-info">
+                                <strong>Interseção (∩):</strong> Elementos comuns
+                                <div class="mt-2">A ∩ B = {x | x ∈ A ∧ x ∈ B}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="alert alert-warning">
+                                <strong>Complemento (<sup>c</sup>):</strong> Elementos não pertencentes
+                                <div class="mt-2">A<sup>c</sup> = {x | x ∉ A}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="alert alert-success">
+                                <strong>Subconjunto (⊆):</strong> Todos elementos contidos
+                                <div class="mt-2">Se A ⊆ B, então ∀x ∈ A → x ∈ B</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <circle class="venn-diagram" cx="120" cy="100" r="80" />
+        <circle class="venn-diagram" cx="180" cy="100" r="80" />
+        <text x="90" y="50" fill="var(--cor-destaque)">A</text>
+        <text x="210" y="50" fill="var(--cor-destaque)">B</text>
+        </svg>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-animada">
+                <div class="card-body">
+                    <h5>Operações Básicas</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">União: A ∪ B</li>
+                        <li class="list-group-item">Interseção: A ∩ B</li>
+                        <li class="list-group-item">Complemento: A<sup>c</sup></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="quiz mt-5">
+            <h4>Teste seus conhecimentos</h4>
+            <div class="card">
+                <div class="card-body">
+                    <p class="fw-bold">Qual o complemento de A = {1,2} em relação ao universo U = {1,2,3,4}?</p>
+                    <div class="btn-group-vertical w-100 gap-2">
+                        <button class="btn btn-outline-primary text-start resposta-btn">{3,4}</button>
+                        <button class="btn btn-outline-primary text-start resposta-btn">{1,2,3}</button>
+                        <button class="btn btn-outline-primary text-start resposta-btn">{2,3}</button>
+                    </div>
+                    <div class="feedback mt-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Relações -->
+    <section id="relacoes" class="container bg-light py-5">
+        <h2 class="mb-4"><i class="fas fa-project-diagram me-2"></i>Relações</h2>
+
+        <div class="introducao mb-5">
+            <h3>Relações Binárias</h3>
+            <div class="card card-animada">
+                <div class="card-body">
+                    <p>Uma relação R em um conjunto A é um subconjunto de A × A. Propriedades essenciais:</p>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <strong>Reflexiva:</strong> ∀x ∈ A, (x,x) ∈ R
+                                    <span class="badge bg-primary ms-2">Ex: ≤ nos números reais</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Simétrica:</strong> Se (x,y) ∈ R → (y,x) ∈ R
+                                    <span class="badge bg-info ms-2">Ex: Relação de igualdade</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <strong>Transitiva:</strong> Se (x,y) ∈ R e (y,z) ∈ R → (x,z) ∈ R
+                                    <span class="badge bg-warning ms-2">Ex: Relação de divisibilidade</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Equivalência:</strong> Quando é reflexiva, simétrica e transitiva
+                                    <span class="badge bg-success ms-2">Ex: Congruência módulo n</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-animada">
+                    <div class="card-body">
+                        <h5><i class="fas fa-arrows-alt-h me-2"></i>Propriedades</h5>
+                        <div class="drag-drop-area">
+                            <div class="draggable" draggable="true">xRx para todo x</div>
+                            <div class="draggable" draggable="true">Se xRy então yRx</div>
+                            <div class="draggable" draggable="true">Se xRy e yRz então xRz</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="drop-zones">
+                    <div class="drop-zone mb-3 p-3">
+                        <h6>Reflexiva <i class="fas fa-hand-point-down"></i></h6>
+                    </div>
+                    <div class="drop-zone mb-3 p-3">
+                        <h6>Simétrica <i class="fas fa-hand-point-down"></i></h6>
+                    </div>
+                    <div class="drop-zone p-3">
+                        <h6>Transitiva <i class="fas fa-hand-point-down"></i></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Funções -->
+
+    <section id="funcoes" class="container py-5">
+        <h2 class="mb-4"><i class="fas fa-chart-line me-2"></i>Funções</h2>
+
+        <section id="funcoes" class="container py-5">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 mb-4"><i class="fas fa-project-diagram"></i> Teoria das Funções</h1>
+                    <p class="lead">Entenda os principais conceitos sobre funções matemáticas e suas propriedades
+                        fundamentais</p>
+                </div>
+            </div>
+
+            <div class="row mt-5 g-4">
+                <div class="col-md-4">
+                    <div class="card intro-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-fingerprint text-primary"></i> Função Injetora</h5>
+                            <p class="text-muted">Cada elemento do domínio mapeia para um elemento único no
+                                contradomínio</p>
+                            <small>Exemplo: f(x) = 2x</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card intro-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-arrows-alt-v text-success"></i> Função Sobrejetora</h5>
+                            <p class="text-muted">Todo elemento do contradomínio é imagem de pelo menos um elemento do
+                                domínio</p>
+                            <small>Exemplo: f(x) = x³</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card intro-card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-link text-danger"></i> Função Bijetora</h5>
+                            <p class="text-muted">Simultaneamente injetora e sobrejetora, permitindo existência de
+                                função inversa</p>
+                            <small>Exemplo: f(x) = x + 3</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="conceito-card">
+                        <h4><i class="fas fa-code-branch"></i> Função Composta</h4>
+                        <p>A combinação de duas funções onde a saída de uma se torna a entrada da outra:</p>
+                        <div class="text-center my-3">
+                            <span class="badge bg-primary">f(g(x)) = (f ∘ g)(x)</span>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Domínio deve compatibilizar</li>
+                            <li class="list-group-item">Não é comutativa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="conceito-card">
+                        <h4><i class="fas fa-retweet"></i> Função Inversa</h4>
+                        <p>Função que "desfaz" a operação da função original, existindo apenas para funções bijetoras:
+                        </p>
+                        <div class="text-center my-3">
+                            <span class="badge bg-success">Se f(x) = y, então f⁻¹(y) = x</span>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">Grágico simétrico</li>
+                            <li class="list-group-item">Domínio e contradomínio trocados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="introducao mb-5">
+            <div class="card card-animada">
+                <div class="card-body">
+                    <h3>Tipos de Funções</h3>
+                    <p>Uma função f: A → B relaciona cada elemento de A a exatamente um elemento de B.</p>
+
+                    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Injetora <i class="fas fa-fingerprint"></i></h5>
+                                    <svg width="100%" height="120">
+                                        <!-- Diagrama de função injetora -->
+                                        <line x1="20" y1="30" x2="100" y2="50" stroke="var(--cor-destaque)" />
+                                        <line x1="20" y1="60" x2="100" y2="80" stroke="var(--cor-destaque)" />
+                                        <line x1="20" y1="90" x2="100" y2="110" stroke="var(--cor-destaque)" />
+                                        <circle cx="20" cy="30" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="20" cy="60" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="20" cy="90" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="100" cy="50" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="100" cy="80" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="100" cy="110" r="2" fill="var(--cor-destaque)" />
+                                    </svg>
+                                    <p class="mt-2"><small>Elementos distintos no domínio têm imagens distintas</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Sobrejetora <i class="fas fa-arrows-alt-v"></i></h5>
+                                    <svg width="100%" height="120">
+                                        <!-- Diagrama de função sobrejetora -->
+                                        <line x1="20" y1="30" x2="100" y2="70" stroke="var(--cor-destaque)" />
+                                        <line x1="20" y1="60" x2="100" y2="70" stroke="var(--cor-destaque)" />
+                                        <line x1="20" y1="90" x2="100" y2="70" stroke="var(--cor-destaque)" />
+                                        <circle cx="20" cy="30" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="20" cy="60" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="20" cy="90" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="100" cy="70" r="2" fill="var(--cor-destaque)" />
+                                    </svg>
+                                    <p class="mt-2"><small>Todo elemento do contradomínio é imagem de algum
+                                            elemento</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Bijetora <i class="fas fa-link"></i></h5>
+                                    <svg width="100%" height="120">
+                                        <!-- Diagrama de função bijetora -->
+                                        <line x1="20" y1="30" x2="100" y2="50" stroke="var(--cor-destaque)" />
+                                        <line x1="20" y1="60" x2="100" y2="80" stroke="var(--cor-destaque)" />
+                                        <line x1="20" y1="90" x2="100" y2="110" stroke="var(--cor-destaque)" />
+                                        <circle cx="20" cy="30" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="20" cy="60" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="20" cy="90" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="100" cy="50" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="100" cy="80" r="2" fill="var(--cor-destaque)" />
+                                        <circle cx="100" cy="110" r="2" fill="var(--cor-destaque)" />
+                                    </svg>
+                                    <p class="mt-2"><small>Função simultaneamente injetora e sobrejetora</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <h5>Função Composta</h5>
+                                    <p>Dadas f: A → B e g: B → C, a composta g∘f: A → C é definida por:</p>
+                                    <p class="text-center">(g∘f)(x) = g(f(x))</p>
+                                    <div class="text-center">
+                                        <i class="fas fa-long-arrow-alt-right fa-2x"></i>
+                                        <i class="fas fa-link mx-3"></i>
+                                        <i class="fas fa-long-arrow-alt-right fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <h5>Função Inversa</h5>
+                                    <p>Se f: A → B é bijetora, existe f⁻¹: B → A tal que:</p>
+                                    <p class="text-center">f⁻¹(f(x)) = x e f(f⁻¹(y)) = y</p>
+                                    <div class="text-center">
+                                        <i class="fas fa-undo fa-2x text-primary"></i>
+                                        <i class="fas fa-exchange-alt mx-3 fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sequências Numéricas -->
+    <section id="sequencias" class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-5"><i class="fas fa-sort-numeric-up-alt"></i> Sequências Numéricas</h2>
+                <p class="lead">Padrões matemáticos fundamentais na organização de números</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Introdução Geral -->
+            <div class="col-md-12">
+                <div class="card card-animada bg-light border-0">
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fas fa-seedling"></i> O que são Sequências?</h4>
+                        <p class="card-text">
+                            Sequências numéricas são listas ordenadas de números que seguem um padrão específico.
+                            Cada elemento é chamado de <strong>termo</strong> e sua posição é indicada por um índice.
+                        </p>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="alert alert-info">
+                                    <strong>Termo Geral:</strong> Fórmula que calcula qualquer termo
+                                    <div class="mt-2">aₙ = f(n)</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="alert alert-warning">
+                                    <strong>Classificação:</strong> Principais tipos
+                                    <ul class="mb-0 mt-2">
+                                        <li>Progressão Aritmética (PA)</li>
+                                        <li>Progressão Geométrica (PG)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PA vs PG -->
+            <div class="col-md-6 mt-4">
+                <div class="card card-animada h-100">
+                    <div class="card-header bg-primary text-white">
+                        <i class="fas fa-calculator"></i> Progressão Aritmética (PA)
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Sequência onde cada termo é obtido somando uma <strong>razão (r)</strong>
+                            ao anterior.</p>
+
+                        <h5>Fórmulas:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Termo geral:
+                                <span class="badge bg-primary">aₙ = a₁ + (n - 1)・r</span>
+                            </li>
+                            <li class="list-group-item">
+                                Soma dos termos:
+                                <span class="badge bg-success">Sₙ = (a₁ + aₙ)・n / 2</span>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-primary mt-3">
+                            <strong>Exemplo:</strong> 2, 5, 8, 11... (r = 3)
+                            <div class="progress mt-2">
+                                <div class="progress-bar" style="width: 25%">+3</div>
+                                <div class="progress-bar bg-success" style="width: 25%">+3</div>
+                                <div class="progress-bar bg-info" style="width: 25%">+3</div>
+                                <div class="progress-bar bg-warning" style="width: 25%">+3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-4">
+                <div class="card card-animada h-100">
+                    <div class="card-header bg-success text-white">
+                        <i class="fas fa-chart-line"></i> Progressão Geométrica (PG)
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Sequência onde cada termo é obtido multiplicando o anterior por uma
+                            <strong>razão (q)</strong>.
+                        </p>
+
+                        <h5>Fórmulas:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Termo geral:
+                                <span class="badge bg-primary">aₙ = a₁・q<sup>n-1</sup></span>
+                            </li>
+                            <li class="list-group-item">
+                                Soma dos termos:
+                                <span class="badge bg-success">Sₙ = a₁(q<sup>n</sup> - 1)/(q - 1)</span>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-success mt-3">
+                            <strong>Exemplo:</strong> 3, 6, 12, 24... (q = 2)
+                            <div class="progress mt-2">
+                                <div class="progress-bar" style="width: 25%">×2</div>
+                                <div class="progress-bar bg-success" style="width: 25%">×2</div>
+                                <div class="progress-bar bg-info" style="width: 25%">×2</div>
+                                <div class="progress-bar bg-warning" style="width: 25%">×2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparativo -->
+            <div class="col-12 mt-4">
+                <div class="card card-animada">
+                    <div class="card-body">
+                        <h4><i class="fas fa-balance-scale"></i> Comparativo PA vs PG</h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Característica</th>
+                                        <th>PA</th>
+                                        <th>PG</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tipo de variação</td>
+                                        <td>Adição constante</td>
+                                        <td>Multiplicação constante</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Razão</td>
+                                        <td>r = a₂ - a₁</td>
+                                        <td>q = a₂ / a₁</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Crescimento</td>
+                                        <td>Linear</td>
+                                        <td>Exponencial</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card card-animada">
+                <div class="card-body">
+                    <h4 class="mb-4"><i class="fas fa-calculator"></i> Gerador de Sequências</h4>
+
+                    <!-- Controles de Entrada -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <label class="form-label">Termo Inicial (a₁)</label>
+                            <input type="number" id="termoInicial" class="form-control" value="2">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Razão (r/q)</label>
+                            <input type="number" id="razao" class="form-control" value="3">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Número de Termos</label>
+                            <input type="number" id="numTermos" class="form-control" value="5" min="3" max="10">
+                        </div>
+                    </div>
+
+                    <!-- Resultados -->
+                    <div class="row g-4">
+                        <!-- PA -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-primary">
+                                <div class="card-header bg-primary text-white">
+                                    Progressão Aritmética
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Fórmula:</h5>
+                                    <p class="formula">aₙ = a₁ + (n-1)・r</p>
+                                    <h5 class="mt-3">Sequência:</h5>
+                                    <div id="resultadoPA" class="alert alert-primary"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PG -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-success">
+                                <div class="card-header bg-success text-white">
+                                    Progressão Geométrica
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Fórmula:</h5>
+                                    <p class="formula">aₙ = a₁・q<sup>n-1</sup></p>
+                                    <h5 class="mt-3">Sequência:</h5>
+                                    <div id="resultadoPG" class="alert alert-success"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-dark mt-4 w-100" onclick="gerarSequencias()">
+                        <i class="fas fa-sync"></i> Gerar Sequências
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Conjuntos -->
+                <div class="col-md-3 col-6">
+                    <h5 class="text-primary mb-3">
+                        <i class="fas fa-shapes"></i> Conjuntos
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#conjuntos" class="text-white text-decoration-none hover-primary">
+                                <i class="fas fa-circle-notch fa-xs"></i> União
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#conjuntos" class="text-white text-decoration-none hover-primary">
+                                <i class="fas fa-bullseye fa-xs"></i> Interseção
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#conjuntos" class="text-white text-decoration-none hover-primary">
+                                <i class="fas fa-complement fa-xs"></i> Complemento
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#conjuntos" class="text-white text-decoration-none hover-primary">
+                                <i class="fas fa-subset fa-xs"></i> Subconjuntos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Relações -->
+                <div class="col-md-3 col-6">
+                    <h5 class="text-success mb-3">
+                        <i class="fas fa-project-diagram"></i> Relações
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <span class="text-white">
+                                <i class="fas fa-retweet fa-xs"></i> Reflexiva
+                            </span>
+                        </li>
+                        <li class="mb-2">
+                            <span class="text-white">
+                                <i class="fas fa-exchange-alt fa-xs"></i> Simétrica
+                            </span>
+                        </li>
+                        <li class="mb-2">
+                            <span class="text-white">
+                                <i class="fas fa-random fa-xs"></i> Transitiva
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text-white">
+                                <i class="fas fa-equals fa-xs"></i> Equivalência
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Funções -->
+                <div class="col-md-3 col-6">
+                    <h5 class="text-danger mb-3">
+                        <i class="fas fa-chart-line"></i> Funções
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <span class="text-white">
+                                <i class="fas fa-fingerprint fa-xs"></i> Injetora
+                            </span>
+                        </li>
+                        <li class="mb-2">
+                            <span class="text-white">
+                                <i class="fas fa-arrows-alt-v fa-xs"></i> Sobrejetora
+                            </span>
+                        </li>
+                        <li class="mb-2">
+                            <span class="text-white">
+                                <i class="fas fa-link fa-xs"></i> Bijetora
+                            </span>
+                        </li>
+                        <li>
+                            <span class="text-white">
+                                <i class="fas fa-sitemap fa-xs"></i> Composta/Inversa
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sequências -->
+                <div class="col-md-3 col-6">
+                    <h5 class="text-warning mb-3">
+                        <i class="fas fa-calculator"></i> Sequências
+                    </h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card bg-black mb-2">
+                                <div class="card-body p-2 text-center">
+                                    <small class="text-warning">PA</small>
+                                    <div class="text-white">aₙ = a₁ + (n-1)r</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card bg-black mb-2">
+                                <div class="card-body p-2 text-center">
+                                    <small class="text-warning">PG</small>
+                                    <div class="text-white">aₙ = a₁·qⁿ⁻¹</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-muted small">
+                        <i class="fas fa-info-circle"></i> Experimente nosso gerador!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-5 opacity-25">
+
+            <!-- Créditos -->
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="text-light mb-3">
+                        <i class="fas fa-rocket"></i> Sobre o Projeto
+                    </h5>
+                    <p class="text-muted small">
+                        Plataforma educativa interativa desenvolvida para demonstração de conceitos
+                        fundamentais de matemática discreta. Todos os exemplos são gerados dinamicamente.
+                    </p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <h5 class="text-light mb-3">
+                        <i class="fas fa-code"></i> Tecnologias
+                    </h5>
+                    <div class="tech-stack">
+                        <span class="badge bg-primary mb-2">Bootstrap 5</span>
+                        <span class="badge bg-success mb-2">Vanilla JS</span>
+                        <span class="badge bg-danger mb-2">Font Awesome</span>
+                        <span class="badge bg-warning mb-2">CSS3</span>
+                        <span class="badge bg-info mb-2">HTML5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center mt-5 opacity-75">
+                <small>
+                    © 2025 Matemática Interativa |
+                    <a href="#" class="text-white text-decoration-none">Termos de Uso</a> |
+                    <a href="#" class="text-white text-decoration-none">Políticas</a>
+                </small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

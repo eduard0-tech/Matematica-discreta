@@ -1,0 +1,164 @@
+:root {
+    --cor-destaque: #2A3B5F;
+    --cor-fundo: #F7F9FC;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    padding-top: 80px;
+    transition: all 0.3s;
+}
+
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    padding: 4rem 0;
+    min-height: 100vh;
+    scroll-margin-top: 80px;
+}
+
+.card-animada {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card-animada:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.dark-mode .card {
+    background-color: #2d2d2d;
+}
+
+.venn-diagram {
+    stroke: var(--cor-destaque);
+    fill: rgba(42, 59, 95, 0.2);
+}
+
+.draggable {
+    padding: 10px;
+    margin: 5px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    cursor: move;
+}
+
+.drop-zone {
+    min-height: 100px;
+    border: 2px dashed #ccc;
+    transition: all 0.3s;
+}
+
+.drop-zone.dragover {
+    border-color: var(--cor-destaque);
+    background-color: rgba(42, 59, 95, 0.1);
+}
+
+@media print {
+
+    .no-print,
+    .navbar,
+    button {
+        display: none !important;
+    }
+
+    section {
+        padding: 0;
+        min-height: auto;
+        page-break-after: always;
+    }
+}
+
+.progress-bar {
+    transition: width 0.5s ease-in-out;
+}
+sup {
+    font-size: 0.7em;
+    top: -0.5em;
+}
+.table thead th {
+    background-color: var(--cor-destaque);
+    color: white; 
+}
+
+.introducao-hero {
+    background: linear-gradient(45deg, #2A3B5F 0%, #3A4B7F 100%);
+    color: white;
+    padding-top: 80px;
+}
+
+.introducao-hero .card {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--cor-destaque);
+}
+
+.introducao-hero .list-group-item {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    transform: translateY(20%);
+    animation: floatIn 1s ease-out forwards;
+}
+
+@keyframes floatIn {
+    from { transform: translateY(20%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.formula {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    background: rgba(0,0,0,0.05);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card.border-primary .card-header {
+    border-bottom: 2px solid #0d6efd;
+}
+
+.card.border-success .card-header {
+    border-bottom: 2px solid #198754;
+}
+
+.alert {
+    transition: all 0.3s ease;
+    min-height: 80px; 
+}
+
+.hover-primary {
+    transition: all 0.3s ease;
+}
+
+.hover-primary:hover {
+    color: var(--cor-destaque) !important;
+    transform: translateX(5px);
+}
+
+.tech-stack .badge {
+    font-size: 0.75em;
+    padding: 0.5em 0.75em;
+    margin: 0 0.25em;
+    opacity: 0.9;
+}
+
+.bg-black {
+    background: rgba(0,0,0,0.3) !important;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
