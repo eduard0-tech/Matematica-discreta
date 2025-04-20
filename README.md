@@ -15,7 +15,6 @@ Recursos principais:
 ✅ Quizzes com feedback imediato  
 ✅ Sistema de arrastar e soltar  
 ✅ Gerador de sequências numéricas  
-✅ Modo escuro persistente  
 ✅ Design totalmente responsivo  
 
 ## 🛠 Tecnologias
