@@ -23,5 +23,5 @@ Recursos principais:
 - **Bootstrap 5** - Layout responsivo e componentes
 - **HTML5** - Estrutura semântica
 - **CSS3** - Estilos e animações
-- **JavaScript** - Lógica e interatividade
+- **Vanilla JS** - Lógica e interatividade
 - **Font Awesome** - Ícones ilustrativos
