@@ -11,7 +11,6 @@ Projeto web educativo que aborda quatro pilares da matemática discreta:
 - **Sequências**: PA e PG com gerador interativo
 
 Recursos principais:
-
 ✅ Introdução interativa com animações  
 ✅ Quizzes com feedback imediato  
 ✅ Sistema de arrastar e soltar  
